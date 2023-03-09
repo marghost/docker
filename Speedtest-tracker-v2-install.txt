@@ -1,0 +1,6 @@
+#There is an issue with install plainly with perms on the config directory.  To make the install work i had to chmod 777, install and then lower the perms.
+	
+docker volume create speedtestv2
+chmod -R 777 ./speedtestv2
+docker run -d -p 8766:80 -p 8767:443 -e PUID=1000 -e PGID=1000 -v /var/run/docker.sock:/var/run/docker.sock -v speedtestv2:/config --name speedtestv2 ghcr.io/alexjustesen/speedtest-tracker:latest
+chmod -R 701 ./speedtestv2
