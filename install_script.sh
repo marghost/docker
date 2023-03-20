@@ -40,23 +40,20 @@ sudo docker run -d --name=transmission-openvpn --privileged --restart=always --c
 
 echo "Docker, Portainer, Uptime Kuma, Speedtest Tracker, Yacht, and Transmission-OpenVPN with NordVPN using a SOCKS5 proxy in Canada have been successfully installed!"
 
-
-
-
 # Set DNSStubListener option to "no"
-sed -i 's/#DNSStubListener=.*/DNSStubListener=no/' /etc/systemd/resolved.conf
+sudo sed -i 's/#DNSStubListener=.*/DNSStubListener=no/' /etc/systemd/resolved.conf
 
 # Restart systemd-resolved service
-systemctl restart systemd-resolved.service
+sudo systemctl restart systemd-resolved.service
 
 echo "DNSStubListener is now set to 'no', systemd-resolved no longer binds to port 53"
 
 
 # Create Docker volume for Pi-hole
-docker volume create pihole
+sudo docker volume create pihole
 
 # Create Pi-hole Docker container with user-specified credentials
-docker run -d \
+sudo docker run -d \
   --name pihole \
   -e TZ=America/New_York \
   -e WEBPASSWORD=$password \
@@ -64,15 +61,15 @@ docker run -d \
   -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
   -p 53:53/tcp \
   -p 53:53/udp \
-  -p 80:80 \
-  -p 443:443 \
+  -p 8088:80 \
+  -p 4438:443 \
   --restart=unless-stopped \
   --dns=127.0.0.1 \
   --dns=1.1.1.1 \
   pihole/pihole:latest
 
 # Create Docker volume for filebrowser
-docker volume create filebrowser
+sudo docker volume create filebrowser
 
 # Install Filebrowser Docker container
 echo "Installing Filebrowser Docker container..."
@@ -99,6 +96,18 @@ do
 done
 
 echo "Done! Filebrowser Docker container is now running."
+
+# Create Heimdall volume
+sudo docker volume create heimdall_data
+
+# Install Heimdall Docker container
+echo "Installing Heimdall Docker container..."
+sudo docker run -d --name=heimdall \
+    -p 80:80 \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v heimdall_data:/config \
+    --restart=always \
+    linuxserver/heimdall
 
 # Get list of running Docker containers
 echo "Retrieving list of running Docker containers..."
