@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Prompt for usernames and passwords
-echo "Please enter a username for Portainer, Uptime Kuma, Speedtest Tracker, Yacht, and Transmission-OpenVPN:"
+echo "Please enter a username for dockers:"
 read username
-echo "Please enter a password for Portainer, Uptime Kuma, Speedtest Tracker, Yacht, and Transmission-OpenVPN:"
-read -s password
+echo "Please enter a password for dockers:"
+read password
 echo "Please enter your NordVPN username:"
 read nordvpn_username
 echo "Please enter your NordVPN password:"
-read -s nordvpn_password
+read nordvpn_password
 
 # Install Portainer
 sudo docker volume create portainer_data
