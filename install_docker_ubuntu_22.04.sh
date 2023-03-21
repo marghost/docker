@@ -7,7 +7,7 @@ sudo apt-get remove docker docker-ce docker-engine docker.io containerd runc
 sudo apt-get update
 
 # Install Docker dependancies
-sudo apt-get install ca-certificate curl gnupg lsb-release apt-transport-https gnupg-agent
+sudo apt-get install ca-certificates curl gnupg lsb-release apt-transport-https gnupg-agent
 
 
 #Add docker repo
