@@ -1,29 +1,5 @@
 #!/bin/bash
 
-#If needed to clean previous install
-sudo apt-get remove docker docker-engine docker.io containerd runc
-
-# Update packages
-sudo apt-get update
-
-# Install Docker dependancies
-sudo apt-get install ca-certificate curl gnupg lsb-release apt-transport-https gnupg-agent
-
-
-#Add docker repo
-sudo mkdir -m 0755 -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu | $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update
-
-# Install Docker
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# Add current user to docker group
-sudo usermod -aG docker $(whoami)
-
 # Prompt for usernames and passwords
 echo "Please enter a username for Portainer, Uptime Kuma, Speedtest Tracker, Yacht, and Transmission-OpenVPN:"
 read username
@@ -37,18 +13,22 @@ read -s nordvpn_password
 # Install Portainer
 sudo docker volume create portainer_data
 sudo docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -e "ADMIN_PASSWORD=$password" -e "ADMIN_USERNAME=$username" portainer/portainer-ce
+echo "Portainer installed"
 
 # Install Uptime Kuma
 sudo docker volume create uptime_kuma_data
 sudo docker run -d -p 3000:3000 --name=uptime-kuma --restart=always -v uptime_kuma_data:/app/data -v /var/run/docker.sock:/var/run/docker.sock -e "SERVER_USER=$username" -e "SERVER_PASSWORD=$password" uptimekuma/uptime-kuma
+echo "Update Kuma installed"
 
 # Install Speedtest Tracker
 sudo docker volume create speedtest_tracker_data
 sudo docker run -d -p 5000:5000 --name=speedtest-tracker --restart=always -v speedtest_tracker_data:/app/data -e "USERNAME=$username" -e "PASSWORD=$password" ajustesen/speedtest-tracker
+echo "Good Speedtest Tracker installed"
 
 # Install Yacht Docker
 sudo docker volume create yacht_data
 sudo docker run -d -p 8001:8000 --name=yacht --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v yacht_data:/config -e "YACHT_USERNAME=$username" -e "YACHT_PASSWORD=$password" selfhostedpro/yacht:latest
+echo "Yacht installed"
 
 # Install Transmission-OpenVPN with NordVPN using a SOCKS5 proxy in Canada
 sudo docker volume create transmission_config
@@ -70,39 +50,15 @@ echo "DNSStubListener is now set to 'no', systemd-resolved no longer binds to po
 sudo docker volume create pihole
 
 # Create Pi-hole Docker container with user-specified credentials
-sudo docker run -d \
-  --name pihole \
-  -e TZ=America/New_York \
-  -e WEBPASSWORD=$password \
-  -v pihole:/etc/pihole \
-  -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
-  -p 53:53/tcp \
-  -p 53:53/udp \
-  -p 8088:80 \
-  -p 4438:443 \
-  --restart=unless-stopped \
-  --dns=127.0.0.1 \
-  --dns=1.1.1.1 \
-  pihole/pihole:latest
+sudo docker run -d --name pihole -e TZ=America/New_York -e WEBPASSWORD=$password -v pihole:/etc/pihole -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" -p 53:53/tcp -p 53:53/udp -p 8088:80 -p 4438:443 --restart=unless-stopped --dns=127.0.0.1 --dns=1.1.1.1 pihole/pihole:latest
+echo "Pihole installed"
 
 # Create Docker volume for filebrowser
 sudo docker volume create filebrowser
 
 # Install Filebrowser Docker container
 echo "Installing Filebrowser Docker container..."
-sudo docker run -d --name filebrowser \
-    -p 8080:80 \
-    -v /:/srv \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v filebrowser:/srv/filebrowser \
-    --restart=always \
-    --user $(id -u):$(id -g) \
-    --env "FILEBROWSER_USERNAME=$username" \
-    --env "FILEBROWSER_PASSWORD=$password" \
-    --env "FILEBROWSER_SCOPE=/srv" \
-    --env "FILEBROWSER_ALLOW_COMMANDS=true" \
-    --env "FILEBROWSER_NO_AUTH=true" \
-    filebrowser/filebrowser:latest
+sudo docker run -d --name filebrowser -p 8080:80 -v /:/srv -v /var/run/docker.sock:/var/run/docker.sock -v filebrowser:/srv/filebrowser --restart=always --user $(id -u):$(id -g) --env "FILEBROWSER_USERNAME=$username" --env "FILEBROWSER_PASSWORD=$password" --env "FILEBROWSER_SCOPE=/srv" --env "FILEBROWSER_ALLOW_COMMANDS=true" --env "FILEBROWSER_NO_AUTH=true" filebrowser/filebrowser:latest
 
 # Set permissions for all Docker volumes
 echo "Setting permissions for all Docker volumes..."
@@ -119,12 +75,7 @@ sudo docker volume create heimdall_data
 
 # Install Heimdall Docker container
 echo "Installing Heimdall Docker container..."
-sudo docker run -d --name=heimdall \
-    -p 80:80 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v heimdall_data:/config \
-    --restart=always \
-    linuxserver/heimdall
+sudo docker run -d --name=heimdall -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock -v heimdall_data:/config --restart=always linuxserver/heimdall
 
 # Get list of running Docker containers
 echo "Retrieving list of running Docker containers..."
