@@ -7,6 +7,6 @@ curl -fsSL get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh --dry-run
 #Install
 sudo sh get-docker.sh
-#Update
-sudo apt-get update && upgrade
+#Update & Upgrade
+sudo apt-get update && sudo apt-get upgrade
 ```
