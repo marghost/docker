@@ -19,7 +19,7 @@ A backup of this specific version of get-docker.sh is available inside the snipp
 
 # Container installation scripts
 
-List of individual installation methodes of some containers I use.
+List of individual installation methods of some containers I use.
 
 ## Portainer
 Install portainer inside docker.  (Docker version 23.0.1)
@@ -38,5 +38,5 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/uptime-ku
 sudo sh uptime-kuma.sh
 ```
 
-#Unified installation of docker and containers
+# Unified installation of docker and containers
 WIP
