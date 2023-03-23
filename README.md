@@ -59,5 +59,14 @@ sudo sh yacht.sh
 The templates for one click install inside Yacht can be found there : https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/yacht/Template/template.json. 
 You can add it manually in yacht template page.
 
+## Transmission-Openvpn
+Install Transmission-Openvpn inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/transmission-openvpn.sh -o transmission-openvpn.sh
+#Install
+sudo sh transmission-openvpn.sh
+```
+
 # Unified installation of docker and containers
 WIP
