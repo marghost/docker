@@ -67,6 +67,8 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/transmiss
 #Install
 sudo sh transmission-openvpn.sh
 ```
+Dont forget to edit "LOCAL_NETWORK=X.X.0.0/16" variable to make the docker accessible.
+
 
 # Unified installation of docker and containers
 WIP
