@@ -24,7 +24,7 @@ List of individual installation methods of some containers I use.
 ## Portainer
 Install portainer inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from docker repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/install-portainer.sh -o install-portainer.sh
 #Install
 sudo sh install-portainer.sh
@@ -32,19 +32,10 @@ sudo sh install-portainer.sh
 ## Uptime Kuma
 Install Uptime Kuma inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from docker repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/uptime-kuma.sh -o uptime-kuma.sh
 #Install
 sudo sh uptime-kuma.sh
-```
-
-## Speedtest-Tracker
-Install Speedtest-Tracker inside docker.  (Docker version 23.0.1)
-```
-#Get install script from my repo
-curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/speedtest-tracker.sh -o speedtest-tracker.sh
-#Install
-sudo sh speedtest-tracker.sh
 ```
 
 # Unified installation of docker and containers
