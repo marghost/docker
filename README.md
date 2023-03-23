@@ -46,6 +46,8 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/speedtest
 #Install
 sudo sh speedtest-tracker.sh
 ```
+Note : In the current version (as of 2023-03-22) we need to adjust the perm when we install the container.  See install script for more details.
+
 
 # Unified installation of docker and containers
 WIP
