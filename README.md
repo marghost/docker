@@ -56,7 +56,8 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/yacht.sh 
 #Install
 sudo sh yacht.sh
 ```
-The templates for one click install insise Yacht can be found there : https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/yacht/Template/template.json
+The templates for one click install inside Yacht can be found there : https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/yacht/Template/template.json
+You can add them manually to the template portal.
 
 # Unified installation of docker and containers
 WIP
