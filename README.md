@@ -48,6 +48,14 @@ sudo sh speedtest-tracker.sh
 ```
 Note : In the current version (as of 2023-03-22) we need to adjust the perm when we install the container.  See install script for more details.
 
+## Yacht
+Install Yacht inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/yacht.sh -o yacht.sh
+#Install
+sudo sh yacht.sh
+```
 
 # Unified installation of docker and containers
 WIP
