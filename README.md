@@ -69,6 +69,14 @@ sudo sh transmission-openvpn.sh
 ```
 Dont forget to edit "LOCAL_NETWORK=X.X.0.0/16" variable to make the docker accessible.
 
+## Pihole
+Install pihole inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/pihole.sh -o pihole.sh
+#Install
+sudo sh pihole.sh
+```
 
 # Unified installation of docker and containers
 WIP
