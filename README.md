@@ -78,5 +78,20 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/pihole.sh
 sudo sh pihole.sh
 ```
 
+# Firewall and Cloudflare Zero Trust (free)
+
+## Firewall
+Now let's set a secure way to access docker containers from the internet.  First I would suggest to setup a firewall and grant limited access to the environment hosting the docker service.  
+
+## Create Cloudflare account
+Then you can create a free tier cloudflare account and use cloudflare zero trust "access" function to create a secure tunnel through a docker container.  (https://one.dash.cloudflare.com).  You will also need to setup a dns to use this service.  
+
+## Basic tunnel setup instructions
+You need to use the docker private bridged address when setting up the tunnel.  
+
+If you use https with a self signed certificate, you need to go to Additional application settings > TLS > No TLS Verify.  
+
+Ref. : https://www.youtube.com/watch?v=5oJK4qG0Ll4
+
 # Unified installation of docker and containers
 WIP
