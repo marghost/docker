@@ -78,6 +78,15 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/pihole.sh
 sudo sh pihole.sh
 ```
 
+## Heimdall
+Install heimdall inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/heimdall.sh -o heimdall.sh
+#Install
+sudo sh heimdall.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall

@@ -2,7 +2,7 @@
 
 echo "Please enter your pihole web password:"
 read password
-echo "Please enter your public ip address : "
+echo "Please enter your local ip address : "
 read publicip
 
 echo "Free the port 53 from ubuntu"
