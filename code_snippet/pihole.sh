@@ -20,5 +20,5 @@ echo "DNSStubListener is now set to 'no', systemd-resolved no longer binds to po
 docker volume create pihole
 
 # Create Pi-hole Docker container with user-specified credentials
-docker run -d --name pihole -e TZ=America/New_York -e WEBPASSWORD=$password -e FTLCONF_LOCAL_IPV4=$publicip -v pihole:/etc/pihole -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" -p 53:53/tcp -p 53:53/udp -p 8880:80 -p 4438:443 --restart=unless-stopped --dns=127.0.0.1 --dns=1.1.1.1 pihole/pihole:latest
+docker run -d --name pihole -e TZ=America/New_York -e WEBPASSWORD=$password -e FTLCONF_LOCAL_IPV4=$publicip -v pihole:/etc/pihole -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" -p 53:53/tcp -p 53:53/udp -p 8088:80 -p 4438:443 --restart=unless-stopped --dns=127.0.0.1 --dns=1.1.1.1 pihole/pihole:latest
 echo "Pihole installed"
