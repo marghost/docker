@@ -14,6 +14,9 @@ sudo sh get-docker.sh
 
 #Update & Upgrade
 sudo apt-get update && sudo apt-get upgrade
+
+#add user to docker group
+sudo usermod -aG docker $(whoami)
 ```
 A backup of this specific version of get-docker.sh is available inside the snippet directory.
 
