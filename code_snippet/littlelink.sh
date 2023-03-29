@@ -10,7 +10,7 @@ docker run -d \
   -e LANG=en \
   -e META_INDEX_STATUS='noindex' \
   -e THEME='Dark' \
-  -e GA_TRACKING_ID='$GKEY' \
+  -e GA_TRACKING_ID=$GKEY \
   -e FAVICON_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
   -e AVATAR_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
   -e AVATAR_2X_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_400x400.jpg' \
