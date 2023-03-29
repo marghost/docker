@@ -90,6 +90,15 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/heimdall.
 sudo sh heimdall.sh
 ```
 
+## LittleLink
+Install littlelink inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/littlelink.sh -o littlelink.sh
+#Install
+sudo sh littlelink.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
