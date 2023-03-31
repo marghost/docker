@@ -36,6 +36,7 @@ docker run -d \
   -e TWITTER='https://twitter.com/marghost' \
   -e INSTAGRAM='https://www.instagram.com/marghost/' \
   -e EMAIL='me@thegeekghost.com' \
+  -e EMAIL_TEXT='Email' \
   -e FOOTER='Marghost © 2023' \
   --restart unless-stopped \
   ghcr.io/techno-tim/littlelink-server:latest
