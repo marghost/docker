@@ -8,9 +8,16 @@ docker run -d \
   -e META_DESCRIPTION='Cybersecurity professionnal | Retro gamer | Electronic Thinkerer | IoT/IIoT | Homelab | ⚜️ 🍁 | Geek' \
   -e META_AUTHOR='Marghost' \
   -e LANG=en \
-  -e META_INDEX_STATUS='noindex' \
+  -e META_INDEX_STATUS='all' \
   -e THEME='Dark' \
   -e GA_TRACKING_ID=$GKEY \
+  -e OG_SITE_NAME='Marghost' \
+  -e OG_TITLE='Marghost' \
+  -e OG_DESCRIPTION='Marghost' \
+  -e OG_URL='http://marg.host' \
+  -e OG_IMAGE='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_400x400.jpg' \
+  -e OG_IMAGE_WIDTH='400' \
+  -e OG_IMAGE_HEIGHT='400' \
   -e BUTTON_ORDER='BLOG,GITHUB,TWITTER,INSTAGRAM,EMAIL' \
   -e FAVICON_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
   -e AVATAR_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
