@@ -16,9 +16,9 @@ docker run -d \
   -e OG_DESCRIPTION='Marghost' \
   -e OG_URL='https://marg.host' \
   -e BUTTON_ORDER='BLOG,GITHUB,TWITTER,INSTAGRAM,EMAIL' \
-  -e FAVICON_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
-  -e AVATAR_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_200x200.jpg' \
-  -e AVATAR_2X_URL='https://pbs.twimg.com/profile_images/1485603469037875200/qWu5PSZD_400x400.jpg' \
+  -e FAVICON_URL='https://pbs.twimg.com/profile_images/1644113600557056000/SnnirDwV_200x200.jpg' \
+  -e AVATAR_URL='https://pbs.twimg.com/profile_images/1644113600557056000/SnnirDwV_200x200.jpg' \
+  -e AVATAR_2X_URL='https://pbs.twimg.com/profile_images/1644113600557056000/SnnirDwV_400x400.jpg' \
   -e AVATAR_ALT='Marghost Profile Pic' \
   -e NAME='Marghost' \
   -e BIO='Cybersecurity professionnal | Retro gamer | Electronic Thinkerer | IoT/IIoT | Homelab | ⚜️ 🍁 | Geek' \
