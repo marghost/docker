@@ -99,6 +99,15 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/littlelin
 sudo sh littlelink.sh
 ```
 
+## Changedetection.io
+Install changedetection inside docker.  (Docker version 23.0.1)
+```
+#Get install script from my repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/changedetection.sh -o changedetection.sh
+#Install
+sudo sh changedetection.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
