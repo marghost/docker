@@ -107,7 +107,7 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/changedet
 #Install
 sudo sh changedetection.sh
 ```
-###SMTP email notification configuration
+### SMTP email notification configuration
 Here is a simple configuration using mailjet.
 ```
 mailtos://username:password@domain.com?smtp=in-v3.mailjet.com&from=me@domain.com&to=X@gmail.com,Y@hotmail.com
