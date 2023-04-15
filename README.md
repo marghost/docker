@@ -1,6 +1,6 @@
 # Docker Install script
 
-Docker installation command.  Tested on ubuntu lts 22.04.
+Docker installation and container configuration notes.  Tested on ubuntu lts 22.04.
 
 ```
 #Get install script from docker repo
@@ -22,12 +22,12 @@ A backup of this specific version of get-docker.sh is available inside the snipp
 
 # Container installation scripts
 
-List of individual installation methods of some containers I use.
+List of installation methods and notes for container I use.
 
 ## Portainer
 Install portainer inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/install-portainer.sh -o install-portainer.sh
 #Install
 sudo sh install-portainer.sh
@@ -35,7 +35,7 @@ sudo sh install-portainer.sh
 ## Uptime Kuma
 Install Uptime Kuma inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/uptime-kuma.sh -o uptime-kuma.sh
 #Install
 sudo sh uptime-kuma.sh
@@ -44,7 +44,7 @@ sudo sh uptime-kuma.sh
 ## Speedtest-Tracker
 Install Speedtest-Tracker inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/speedtest-tracker.sh -o speedtest-tracker.sh
 #Install
 sudo sh speedtest-tracker.sh
@@ -54,7 +54,7 @@ Note : In the current version (as of 2023-03-22) we need to adjust the perm when
 ## Yacht
 Install Yacht inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/yacht.sh -o yacht.sh
 #Install
 sudo sh yacht.sh
@@ -65,7 +65,7 @@ You can add it manually in yacht template page.
 ## Transmission-Openvpn
 Install Transmission-Openvpn inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/transmission-openvpn.sh -o transmission-openvpn.sh
 #Install
 sudo sh transmission-openvpn.sh
@@ -75,7 +75,7 @@ Dont forget to edit "LOCAL_NETWORK=X.X.0.0/16" variable to make the docker acces
 ## Pihole
 Install pihole inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/pihole.sh -o pihole.sh
 #Install
 sudo sh pihole.sh
@@ -84,7 +84,7 @@ sudo sh pihole.sh
 ## Heimdall
 Install heimdall inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/heimdall.sh -o heimdall.sh
 #Install
 sudo sh heimdall.sh
@@ -93,7 +93,7 @@ sudo sh heimdall.sh
 ## LittleLink
 Install littlelink inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/littlelink.sh -o littlelink.sh
 #Install
 sudo sh littlelink.sh
@@ -102,10 +102,15 @@ sudo sh littlelink.sh
 ## Changedetection.io
 Install changedetection inside docker.  (Docker version 23.0.1)
 ```
-#Get install script from my repo
+#Get install script from this repo
 curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/changedetection.sh -o changedetection.sh
 #Install
 sudo sh changedetection.sh
+```
+###SMTP email notification configuration
+Here is a simple configuration using mailjet.
+```
+mailtos://username:password@domain.com?smtp=in-v3.mailjet.com&from=me@domain.com&to=X@gmail.com,Y@hotmail.com
 ```
 
 # Firewall and Cloudflare Zero Trust (free)
