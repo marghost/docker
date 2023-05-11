@@ -113,6 +113,15 @@ Here is a simple configuration using mailjet.
 mailtos://username:password@domain.com?smtp=in-v3.mailjet.com&from=me@domain.com&to=X@gmail.com,Y@hotmail.com
 ```
 
+## Rustdesk
+Install rustdesk inside docker.  (Docker version 23.0.1)
+```
+#Get install script from this repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/rustdesk.sh -o rustdesk.sh
+#Install
+sudo sh rustdesk.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
