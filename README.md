@@ -136,12 +136,21 @@ sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shli
 ```
 ### Edit docker-compose.yml file
 Now open the downloaded docker-compose.yml file and edit the variables identified between the "<>"
+```
+#Edit docker-compose.yml
+sudo nano /opt/shlink/docker-compose.yml
+```
 
 <DEFAULT_DOMAIN>: Select domain through which the Shlink instance will be accessible
+
 <IS_HTTPS_ENABLED>: If a reverse proxy with TLS termination is installed (technology to be able to use https), true must be entered here, otherwise false
+
 <GEOLITE_LICENSE_KEY>: Get a Geolite license key (www.maxmind.com)
+
 <DB_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+
 <MARIADB_ROOT_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+
 <8888>: Choose a port to access the web gui
 
 ### Install
