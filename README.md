@@ -154,7 +154,6 @@ sudo nano /opt/shlink/docker-compose.yml
 <8888>: Choose a port to access the service from the web
 
 ### Install
-Proceed with the install
 ```
 #Install
 cd /opt/shlink
@@ -162,7 +161,7 @@ sudo sh /opt/shlink/shlink.sh
 ```
 Source : https://community.hetzner.com/tutorials/install-shlink-docker
 
-# Shlink Web GUI
+## Shlink Web GUI
 Now that the core system is installed, we will install the web GUI so we can control our instance.  Note that this step is not necessary, you could access your instance with https://app.shlink.io/
 
 Before we setup the docker, we need to generate an api-key by running this command
