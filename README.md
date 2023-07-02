@@ -179,7 +179,9 @@ sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shli
 
 Then edit those variables : 
 <SERVER_URL>: Your server url with the prefix "https://<URL>"
+
 <GENERATED_API_KEY>: The key we just saved
+
 
 We are ready to install the image, we can do so by executing 
 ```
