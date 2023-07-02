@@ -162,6 +162,30 @@ sudo sh /opt/shlink/shlink.sh
 ```
 Source : https://community.hetzner.com/tutorials/install-shlink-docker
 
+# Shlink Web GUI
+Now that the core system is installed, we will install the web GUI so we can control our instance
+
+First we need to generate an api-key by running this command
+```
+docker exec -it shlink_shlink_1 shlink api-key:generate
+```
+Save the generated API key
+
+Now we are going to download the Shlink web GUI script
+```
+#Get install script from this repo
+sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink-web-gui.sh -o shlink-web-gui.sh
+```
+
+Then edit those variables : 
+<SERVER_URL>: Your server url with the prefix "https://<URL>"
+<GENERATED_API_KEY>: The key we just saved
+
+We are ready to install the image, we can do so by executing 
+```
+sudo sh shlink-web-gui.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
