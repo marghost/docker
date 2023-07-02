@@ -123,18 +123,34 @@ sudo sh rustdesk.sh
 ```
 
 ## Shlink
+### Prerequirement
 We will shift things up and use docker compose for this one.  First of all create a directory to put the required files.
 ```
-sudo mkdir /opt/shlink
+sudo mkdir -p /opt/shlink/db_data/
 ```
-Download and Install shlink inside docker.  (Docker version 23.0.1)
+Download required files
 ```
 #Get install script from this repo
 sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink/shlink.sh -o /opt/shlink/shlink.sh
 sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink/docker-compose.yml -o /opt/shlink/docker-compose.yml
+```
+### Edit docker-compose.yml file
+Now open the downloaded docker-compose.yml file and edit the variables identified between the "<>"
+
+<DEFAULT_DOMAIN>: Select domain through which the Shlink instance will be accessible
+<IS_HTTPS_ENABLED>: If a reverse proxy with TLS termination is installed (technology to be able to use https), true must be entered here, otherwise false
+<GEOLITE_LICENSE_KEY>: Get a Geolite license key (www.maxmind.com)
+<DB_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+<MARIADB_ROOT_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+<8888>: Choose a port to access the web gui
+
+### Install
+Then proceed with the install by running this command
+```
 #Install
 sudo sh /opt/shlink/shlink.sh
 ```
+Source : https://community.hetzner.com/tutorials/install-shlink-docker
 
 # Firewall and Cloudflare Zero Trust (free)
 
