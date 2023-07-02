@@ -122,6 +122,15 @@ curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/rustdesk.
 sudo sh rustdesk.sh
 ```
 
+## Shlink
+Install shlink inside docker.  (Docker version 23.0.1)
+```
+#Get install script from this repo
+curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink.sh -o shlink.sh
+#Install
+sudo sh shlink.sh
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
