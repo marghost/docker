@@ -157,6 +157,7 @@ sudo nano /opt/shlink/docker-compose.yml
 Then proceed with the install by running this command
 ```
 #Install
+cd /opt/shlink
 sudo sh /opt/shlink/shlink.sh
 ```
 Source : https://community.hetzner.com/tutorials/install-shlink-docker
