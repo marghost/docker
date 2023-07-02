@@ -130,8 +130,8 @@ sudo mkdir /opt/shlink
 Download and Install shlink inside docker.  (Docker version 23.0.1)
 ```
 #Get install script from this repo
-sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink.sh -o /opt/shlink/shlink.sh
-sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/docker-compose.yml -o /opt/shlink/docker-compose.yml
+sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink/shlink.sh -o /opt/shlink/shlink.sh
+sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink/docker-compose.yml -o /opt/shlink/docker-compose.yml
 #Install
 sudo sh /opt/shlink/shlink.sh
 ```
