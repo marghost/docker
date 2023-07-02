@@ -123,7 +123,7 @@ sudo sh rustdesk.sh
 ```
 
 ## Shlink
-### Prerequirement
+### Requirement
 We will shift things up and use docker compose for this one.  First of all create a directory to put the required files.
 ```
 sudo mkdir -p /opt/shlink/db_data/
@@ -143,18 +143,18 @@ sudo nano /opt/shlink/docker-compose.yml
 
 <DEFAULT_DOMAIN>: Select domain through which the Shlink instance will be accessible
 
-<IS_HTTPS_ENABLED>: If a reverse proxy with TLS termination is installed (technology to be able to use https), true must be entered here, otherwise false
+<IS_HTTPS_ENABLED>: If needed, as I will front the service with cloudflare, it's not needed in my case I will set it to false
 
 <GEOLITE_LICENSE_KEY>: Get a Geolite license key (www.maxmind.com)
 
-<DB_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+<DB_PASSWORD>: Setup a secure password
 
-<MARIADB_ROOT_PASSWORD>: A secure password, preferably randomly generated, must be entered here
+<MARIADB_ROOT_PASSWORD>: Setup a secure password
 
-<8888>: Choose a port to access the web gui
+<8888>: Choose a port to access the service from the web
 
 ### Install
-Then proceed with the install by running this command
+Proceed with the install
 ```
 #Install
 cd /opt/shlink
@@ -163,9 +163,9 @@ sudo sh /opt/shlink/shlink.sh
 Source : https://community.hetzner.com/tutorials/install-shlink-docker
 
 # Shlink Web GUI
-Now that the core system is installed, we will install the web GUI so we can control our instance
+Now that the core system is installed, we will install the web GUI so we can control our instance.  Note that this step is not necessary, you could access your instance with https://app.shlink.io/
 
-First we need to generate an api-key by running this command
+Before we setup the docker, we need to generate an api-key by running this command
 ```
 docker exec -it shlink_shlink_1 shlink api-key:generate
 ```
@@ -177,16 +177,18 @@ Now we are going to download the Shlink web GUI script
 sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink-web-gui.sh -o shlink-web-gui.sh
 ```
 
-Then edit those variables : 
+Then edit those variables inside shlink-web-gui.sh : 
+
 <SERVER_URL>: Your server url with the prefix "https://<URL>"
 
-<GENERATED_API_KEY>: The key we just saved
+<GENERATED_API_KEY>: The API key we just generated
 
 
 We are ready to install the image, we can do so by executing 
 ```
 sudo sh shlink-web-gui.sh
 ```
+The install is now complete!
 
 # Firewall and Cloudflare Zero Trust (free)
 
