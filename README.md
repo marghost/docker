@@ -123,12 +123,17 @@ sudo sh rustdesk.sh
 ```
 
 ## Shlink
-Install shlink inside docker.  (Docker version 23.0.1)
+We will shift things up and use docker compose for this one.  First of all create a directory to put the required files.
+```
+sudo mkdir /opt/shlink
+```
+Download and Install shlink inside docker.  (Docker version 23.0.1)
 ```
 #Get install script from this repo
-curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink.sh -o shlink.sh
+sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/shlink.sh -o /opt/shlink/shlink.sh
+sudo curl -fsSL raw.githubusercontent.com/marghost/docker/main/code_snippet/docker-compose.yml -o /opt/shlink/docker-compose.yml
 #Install
-sudo sh shlink.sh
+sudo sh /opt/shlink/shlink.sh
 ```
 
 # Firewall and Cloudflare Zero Trust (free)
