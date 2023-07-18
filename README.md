@@ -72,6 +72,13 @@ sudo sh transmission-openvpn.sh
 ```
 Dont forget to edit "LOCAL_NETWORK=X.X.0.0/16" variable to make the docker accessible.
 
+### EDITH 2023-07-17
+If you use Nordvpn : 
+You need to generate the credentials needed by openvpn.  To do that you need to login to nordvpn website.  Then go to Services > Nordvpn.
+Scroll to the "manual install" section.  
+Click on the "manual nordvpn config" button.
+Save the generated login and password.
+
 ## Pihole
 Install pihole inside docker.  (Docker version 23.0.1)
 ```
