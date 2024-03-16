@@ -196,6 +196,22 @@ sudo sh shlink-web-gui.sh
 ```
 The install is now complete!
 
+## Prometheus
+Tool used to grab minecraft server stats data.  Can be found : https://prometheus.io/
+(Used with fabric-exporter minecraft mod)
+
+### Manual install
+```
+# Create volume
+docker volume create prometheus-data
+
+# Grab, edit and paste prometheus.yml on your server inside /home/user/prometheus/
+
+# Install docker
+docker run -d -p 9090:9090 -v /home/ubuntu/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v prometheus-data:/prometheus prom/prometheus
+
+```
+
 # Firewall and Cloudflare Zero Trust (free)
 
 ## Firewall
