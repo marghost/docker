@@ -211,6 +211,14 @@ docker volume create prometheus-data
 docker run -d -p 9090:9090 -v /home/ubuntu/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v prometheus-data:/prometheus prom/prometheus
 
 ```
+## Grafana
+
+### Manual install
+```
+docker volume create grafana-storage
+
+docker run -d -p 3002:3000 -v grafana-storage:/grafana --name=grafana grafana/grafana-enterprise
+```
 
 # Firewall and Cloudflare Zero Trust (free)
 
