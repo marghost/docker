@@ -254,5 +254,19 @@ sudo cloudflared service install TOKEN
 ~~If you use https with a self signed certificate, you need to go to Additional application settings > TLS > No TLS Verify.~~
 ~~Ref. : https://www.youtube.com/watch?v=5oJK4qG0Ll4~~
 
+## Access services behind cloudflare
+### Using Service Tokens and Custom Headers
+- Generate a new token on cloudflare by going in Zero Trust > Access > Service Auth.  (Take note of client and token)
+- Go to the application you want to access in Zero Trust > Access > Applications > Configure.
+- Select "Add a policy".
+- Be sure to select Action Service Auth.
+- Then "Create additional rules" > Include > Service Token.
+- Choose Value the new Service Auth you created.
+- Clic "add policy" then "save"
+- Last step is to add your custom header in the specific app you want to connect.  Let's use Graphana.
+- Add data source
+- Select custom headers, copy paste the name of the two variables you saved earlier and paste them without the : in two separate custom headers.  The value for each are the strings that came from cloudflare.
+- Enjoy.
+
 # Unified installation of docker and containers
 WIP
